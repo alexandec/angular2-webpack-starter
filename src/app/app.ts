@@ -65,34 +65,7 @@ export class XLarge {
     }
   `],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  template: `
-  <header>
-    <h1 class="title">Hello {{ title }}</h1>
-  </header>
-
-  <main>
-    Your Content Here
-    <div>
-
-      <input type="text" [value]="title" (input)="title = $event.target.value" autofocus>
-      <!--
-        Rather than wiring up two-way data-binding ourselves
-        we can use Angular's [(ng-model)] syntax
-        <input type="text" [(ng-model)]="title">
-      -->
-    </div>
-
-    <pre>this.title = {{ title | json }}</pre>
-    <pre>this.data = {{ data | json }}</pre>
-    
-    <mt-time>I'll tell you the time</mt-time>
-
-  </main>
-
-  <footer x-large>
-    WebPack Angular 2 Starter by <a href="https://twitter.com/AngularClass">@AngularClass</a>
-  </footer>
-  `
+  templateUrl: 'tmpl/main.html'
 })
 export class App {
   // These are member type
