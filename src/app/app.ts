@@ -83,7 +83,7 @@ export class App {
   data: Array<any> = []; // default data
   // TypeScript public modifiers
   constructor(public http: Http) {
-    this.title = 'Angular 2';
+    this.title = 'Angular Two';
   }
 
   onInit() {
