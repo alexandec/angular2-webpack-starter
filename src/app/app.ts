@@ -27,6 +27,21 @@ export class XLarge {
   }
 }
 
+  /* 
+   * Component
+   * Display the current time
+   */
+  @Component({
+    selector: 'mt-time',
+    template: "The clock says '<ng-content></ng-content>' at {{ time | date:'hh:mm:ss' }}"
+  })
+  export class MTTime {
+    time: number;
+    
+    constructor() {
+      this.time = Date.now();
+    }
+  }
 
 /*
  * App Component
@@ -39,7 +54,7 @@ export class XLarge {
   selector: 'app', // <app></app>
   // We need to tell Angular's compiler which directives are in our template.
   // Doing so will allow Angular to attach our behavior to an element
-  directives: [ CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES, XLarge ],
+  directives: [ CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES, XLarge, MTTime ],
   // Our list of styles in our component. We may add more to compose many styles together
   styles: [`
     .title {
@@ -69,6 +84,8 @@ export class XLarge {
 
     <pre>this.title = {{ title | json }}</pre>
     <pre>this.data = {{ data | json }}</pre>
+    
+    <mt-time>I'll tell you the time</mt-time>
 
   </main>
 
